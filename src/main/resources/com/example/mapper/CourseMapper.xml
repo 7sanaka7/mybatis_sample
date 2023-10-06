@@ -14,4 +14,13 @@
     <insert id="insert" useGeneratedKeys="true" keyColumn="ID" keyProperty="id">
     	INSERT INTO COURSES (ID, NAME) VALUES (COURSE_ID_SEQ.nextval, #{name})
     </insert>
+    
+     <select id="findById" resultMap="courseMap">
+        SELECT * FROM COURSES WHERE ID = #{id}
+    </select>
+​
+    <update id="update">
+        UPDATE COURSES SET NAME = #{name} WHERE ID = #{id}
+    </update>
+ 
 </mapper>

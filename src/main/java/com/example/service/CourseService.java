@@ -27,4 +27,15 @@ public class CourseService {
 		this.courseMapper.insert(course);
 		  }
 	
+	public Course findById(Integer id) {
+		return this.courseMapper.findById(id);
+		}
+
+		public void update(Integer id, String name) {
+		Course course = new Course();
+		course.setId(id);
+		course.setName(name);
+		this.courseMapper.update(course);
+		  }
+	
 }
