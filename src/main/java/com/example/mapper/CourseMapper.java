@@ -10,4 +10,6 @@ import com.example.entity.Course;
 public interface CourseMapper {
 
 	public List<Course> findAll();
+	
+	public void insert(Course course);
 }
