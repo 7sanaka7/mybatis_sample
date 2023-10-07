@@ -52,4 +52,10 @@ public class CourseController {
 		 this.courseService.update(id, courseForm.getName());
 		 return "redirect:/course/list";
 	 }
+	 
+	 @GetMapping("/{id}")
+	 public String detail(@PathVariable Integer id, Model model) {
+		 Course course = this.courseService.findById(id);
+		 return "detail";
+		 }
 }
