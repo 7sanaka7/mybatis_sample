@@ -6,14 +6,6 @@
 	<resultMap type="com.example.entity.Course" id="courseMap">
 		<id column="ID" property="id"/>
 		<result column="NAME" property="name"/>
-		<association property="courseDetail" javaType="com.example.entity.CourseDetail">
-		<id column="CD_ID" property="id"/>
-		<result column="DESCRIPTION" property="description"/>
-		</association>
-		<collection property="chapters" ofType="com.example.entity.Chapter">
-			<id column="CH_ID" property="id"/>
-			<result column="CH_NAME" property="name"/>
-		</collection>
 	</resultMap>
 
 	<select id="findById" resultMap="courseMap">
