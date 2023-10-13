@@ -57,9 +57,18 @@ public class CourseController {
 		 return "redirect:/course/list";
 	 }
 	 
+	 @GetMapping("/{id}")
+	 public String detail(@PathVariable Integer id, Model model) {
+		 Course course = this.courseService.findById(id);
+		 model.addAttribute("course", course);
+		 return "detail";
+		 }
+
 	 @PostMapping("/delete/{id}")
 	 public String delete(@PathVariable Integer id) {
 		 this.courseService.deleteById(id);
 		 return "redirect:/course/list";
-	 }
+	 
 	}
+}
+
